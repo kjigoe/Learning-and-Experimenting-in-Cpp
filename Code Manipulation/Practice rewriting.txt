@@ -1,0 +1,73 @@
+//Original
+j = 3;
+for (i = 0; i < 3; i++) {
+	switch (j + 2)  {
+		case 3:
+		case 2: j--; break;
+		case 0: j += 2; break;
+		default: j = 0;
+	}
+	if (j > 0) break;
+	j = 3 - i
+}
+
+*********
+if and goto statement practice
+*********
+
+j=3;
+for (i = 0; i < 3; i++) {
+	b = j + 2;
+	if( (b == 3) || (b == 2) ) {
+		j--;
+		goto LOOP;
+	}
+	else if( b == 0) {
+		j += 2;
+		goto LOOP;
+	}
+	else {
+		j = 0;
+		goto LOOP;
+	}
+	LOOP:do
+	{
+		if (j > 0) break;
+		j = 3 - i
+	} while (1);
+}
+
+*********
+rewriting without and gotos or breaks
+*********
+
+j=3;
+for (i = 0; i < 3; i++) {
+	b = j + 2;
+	if( (b == 3) || (b == 2) ) {
+		j--;
+		if (j > 0) {
+			return;
+		}
+		else {
+			j = 3 - i;
+		}
+	else if( b == 0) {
+		j += 2;
+		if (j > 0) {
+			return;
+		}
+		else {
+			j = 3 - i;
+		}
+	}
+	else {
+		j = 0;
+		if (j > 0) {
+			return;
+		}
+		else {
+			j = 3 - i;
+		}
+	}
+}
